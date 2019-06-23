@@ -1,4 +1,10 @@
 
+if exists('loaded_vim_terminal')
+  finish
+endif
+
+let loaded_vim_terminal = 1
+
 nnoremap <silent> <Leader>t :call terminal#toggle()<CR>
 tnoremap <silent> <Leader>t <C-w>:call terminal#toggle()<CR>
 tnoremap <silent> <Leader><Leader> <C-w>:call terminal#hide()<CR>
