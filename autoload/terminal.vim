@@ -43,8 +43,9 @@ endfunction
 
 function! terminal#hide()
   let winid = win_getid()
-  let prevBufnr = s:terminalPrevBufs[winid]
-  if bufexists(prevBufnr)
+  let prevBufnr = get(s:terminalPrevBufs, winid, -1)
+
+  if prevBufnr != -1 && bufexists(prevBufnr)
     silent execute "normal! \<C-w>:b " . prevBufnr . "\<CR>"
   else
     while &buftype == 'terminal'
