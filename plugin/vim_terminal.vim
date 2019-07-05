@@ -16,4 +16,5 @@ tnoremap <silent> <C-d> <C-w>:call terminal#close()<CR>
 tnoremap <silent> <Leader>q <C-w>:call terminal#close()<CR>
 tnoremap <silent> <Leader>a <C-w>:call terminal#add()<CR>
 
+tnoremap <silent> <Leader>m <C-w>N
 
