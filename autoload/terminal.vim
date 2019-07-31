@@ -37,7 +37,7 @@ function! terminal#close()
   call terminal#hide()
   let i = index(s:terminals, buf)
   let s:terminals = Remove(s:terminals, i)
-  echo s:terminals
+  " echo s:terminals
   silent execute "normal! :bwipe! " . buf . "\<CR>"
 endfunction
 
@@ -72,7 +72,7 @@ function! terminal#switch(direction)
   if i == length
     let i = 0
   elseif i == -1
-    let i length - 1
+    let i = length - 1
   endif
   silent execute "normal! :b " . s:terminals[i] . "\<CR>"
 endfunction
